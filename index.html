@@ -227,20 +227,20 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </thead>
 <tbody>
 <tr class="odd">
-<td>Licensing, org name, region, identity count</td>
-<td><strong>Admin &gt;</strong>** System Settings ****&gt;**** Product Licenses**</td>
+<td>Licensing, Org Name, Region, Identity Count</td>
+<td><strong>Admin &gt; System Settings &gt; Product Licenses</strong></td>
 </tr>
 <tr class="even">
 <td>Active jobs (for example, identity processing)</td>
-<td><strong>Admin &gt;</strong>** Dashboard ****&gt;**** Monitor**</td>
+<td><strong>Admin &gt; Dashboard &gt; Monitor</strong></td>
 </tr>
 <tr class="odd">
 <td>Manual provisioning tasks</td>
-<td><strong>Admin &gt;</strong>** Dashboard ****&gt;**** Tasks**</td>
+<td><strong>Admin &gt; Dashboard &gt; Tasks</strong></td>
 </tr>
 <tr class="even">
 <td>Approval administration</td>
-<td><strong>Admin &gt;</strong>** Dashboard ****&gt;**** Approval Management**</td>
+<td><strong>Admin &gt; Dashboard &gt; Approval Management</strong></td>
 </tr>
 <tr class="odd">
 <td>Service health</td>
@@ -266,7 +266,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <li>SailPoint supports only <strong>N-2</strong> major releases.</li>
 <li>Long-running aggregations can be interrupted by an update.</li>
 <li>If a VA does not reboot after an update, restart the VA cluster manually.</li>
-</ul><p><strong>Monitoring VA health:</strong> email notifications, the Clusters tile on the Admin Dashboard, <strong>Admin &gt;</strong>** Connections ****&gt;**** Virtual Appliances** (cluster cards with status badges), cluster details (Virtual Appliances tab), the VA component status page, and export of metrics and logs to third-party tools (VA Observability). Example badges: <em>VA Update in Progress</em> (at least 1 VA configuring) and <em>Empty Cluster</em> (no VAs, unusable until VAs are added).</p><p><strong>VA keys:</strong> a VA key is generated when you create a VA. You cannot create or delete it on the API Management page. Delete the VA to remove its key.</p></div></details>
+</ul><p><strong>Monitoring VA health:</strong> email notifications, the Clusters tile on the Admin Dashboard, <strong>Admin &gt; Connections &gt; Virtual Appliances</strong> (cluster cards with status badges), cluster details (Virtual Appliances tab), the VA component status page, and export of metrics and logs to third-party tools (VA Observability). Example badges: <em>VA Update in Progress</em> (at least 1 VA configuring) and <em>Empty Cluster</em> (no VAs, unusable until VAs are added).</p><p><strong>VA keys:</strong> a VA key is generated when you create a VA. You cannot create or delete it on the API Management page. Delete the VA to remove its key.</p></div></details>
 <details class="topic traps" id="module-1-platform-foundations-and-virtual-appliances-exam-tr"><summary><h3>Exam traps: Module 1</h3></summary><div class="inner"><p class="callout warn"><strong>Exam trap:</strong> Emergency access admins exist so you can still sign in when SSO or connectivity fails.</p><p class="callout warn"><strong>Exam trap:</strong> VAs are outbound-only. No inbound connection is needed from SailPoint.</p><p class="callout warn"><strong>Exam trap:</strong> Minimum 2 VAs per cluster, no load balancer required, DMZ not recommended.</p><p class="callout warn"><strong>Exam trap:</strong> One disconnected VA blocks updates for the whole cluster.</p></div></details>
 </div></section>
 
@@ -610,7 +610,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </tr>
 </tbody>
 </table></div><p>Admins and <strong>Access Revokers</strong> can submit requests to remove entitlements, roles and access profiles from any user.</p></div></details>
-<details class="topic" id="module-4-the-access-model-4-2-entitlements"><summary><h3>4.2 Entitlements</h3></summary><div class="inner"><p>Path: <strong>Admin &gt;</strong>** Access Model ****&gt;**** Entitlements**. They can be configured for requests, grouped into access profiles, added directly to roles, and reviewed in certifications.</p><p><strong>Key attributes:</strong></p><ul>
+<details class="topic" id="module-4-the-access-model-4-2-entitlements"><summary><h3>4.2 Entitlements</h3></summary><div class="inner"><p>Path: <strong>Admin &gt; Access Model &gt; Entitlements</strong>. They can be configured for requests, grouped into access profiles, added directly to roles, and reviewed in certifications.</p><p><strong>Key attributes:</strong></p><ul>
 <li><strong>Permissions:</strong> units of read, write or other access. <strong>Direct permissions</strong> are aggregated as entitlements and shown on the directPermissions attribute. <strong>You cannot modify a permission inside SailPoint.</strong></li>
 <li><strong>Type:</strong> some sources support several entitlement types, each with its own schema.</li>
 <li><strong>Direct privilege level:</strong> set manually or by a privilege classification method (Manual Override, Applied custom criteria, Applied recommendation, Same level applied to all entitlements).</li>
@@ -743,8 +743,8 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <li>On the Approvals page, reviewers see the identity’s name, email, manager and identity state. You can add up to <strong>5 more attributes</strong> with the <strong>Update Public Identity Config</strong> endpoint (the same applies to certifications).</li>
 <li>Items in a request can be individually provisioned or canceled without affecting other items.</li>
 </ul></div></details>
-<details class="topic" id="module-6-access-requests-and-certifications-6-2-configuring-"><summary><h3>6.2 Configuring items for requests</h3></summary><div class="inner"><p><strong>Roles and access profiles</strong> (item &gt; Access Requests tab): <em>Allow Access Requests</em>, <em>Require Access Request Form</em> (a form automatically includes start date, end date and comments), <em>Require End Date</em> (optional <strong>maximum duration</strong> in hours, days, weeks or months, counted from the request time and therefore including approval time), <em>Require Approval</em> with <strong>Reviewer</strong> (individual or governance group) or <strong>Workflow</strong>. Without <em>Require Approval</em>, the <strong>global</strong> approval configuration still applies.</p><p><strong>Role reviewer options include:</strong> All Owners (primary or any additional owner can approve), Primary Owner, and others such as manager, identity, governance group.</p><p><strong>Entitlements:</strong> enable globally at <strong>Admin &gt;</strong>** Global ****&gt;**** System Settings ****&gt;**** Feature Settings ****&gt;**** Access Request ****&gt;**** Enable Entitlement Requests<strong>. Entitlement reviewer types are </strong>Entitlement Owner, Source Owner, Manager, Governance Group** (only <strong>one</strong> member of a governance group must approve). Multiple reviewers form an ordered chain. If entitlement requests are disabled, <strong>removal requests are also disabled</strong>. To allow revocation without requests, enable the feature but make no entitlement requestable. <strong>Enable Machine Identity Access Requests</strong> is on by default.</p><p><strong>Requests for others:</strong> Feature Settings &gt; Access Requests &gt; <em>Enable Requests on Behalf of others</em>, then <strong>By Managers for their Team</strong> (direct reports only) or <strong>By Everyone for Anyone</strong>.</p></div></details>
-<details class="topic" id="module-6-access-requests-and-certifications-6-3-global-appro"><summary><h3>6.3 Global approval settings</h3></summary><div class="inner"><p>Path: <strong>Admin &gt;</strong>** Global ****&gt;**** System Settings ****&gt;**** Feature Settings ****&gt;**** Approval Settings<strong>. Tabs: </strong>Global, Access Requests, Entitlement Descriptions, Agent Requests**.</p><div class="tablewrap"><table>
+<details class="topic" id="module-6-access-requests-and-certifications-6-2-configuring-"><summary><h3>6.2 Configuring items for requests</h3></summary><div class="inner"><p><strong>Roles and access profiles</strong> (item &gt; Access Requests tab): <em>Allow Access Requests</em>, <em>Require Access Request Form</em> (a form automatically includes start date, end date and comments), <em>Require End Date</em> (optional <strong>maximum duration</strong> in hours, days, weeks or months, counted from the request time and therefore including approval time), <em>Require Approval</em> with <strong>Reviewer</strong> (individual or governance group) or <strong>Workflow</strong>. Without <em>Require Approval</em>, the <strong>global</strong> approval configuration still applies.</p><p><strong>Role reviewer options include:</strong> All Owners (primary or any additional owner can approve), Primary Owner, and others such as manager, identity, governance group.</p><p><strong>Entitlements:</strong> enable globally at <strong>Admin &gt; Global &gt; System Settings &gt; Feature Settings &gt; Access Request &gt; Enable Entitlement Requests</strong>. Entitlement reviewer types are <strong>Entitlement Owner, Source Owner, Manager, Governance Group</strong> (only <strong>one</strong> member of a governance group must approve). Multiple reviewers form an ordered chain. If entitlement requests are disabled, <strong>removal requests are also disabled</strong>. To allow revocation without requests, enable the feature but make no entitlement requestable. <strong>Enable Machine Identity Access Requests</strong> is on by default.</p><p><strong>Requests for others:</strong> Feature Settings &gt; Access Requests &gt; <em>Enable Requests on Behalf of others</em>, then <strong>By Managers for their Team</strong> (direct reports only) or <strong>By Everyone for Anyone</strong>.</p></div></details>
+<details class="topic" id="module-6-access-requests-and-certifications-6-3-global-appro"><summary><h3>6.3 Global approval settings</h3></summary><div class="inner"><p>Path: <strong>Admin &gt; Global &gt; System Settings &gt; Feature Settings &gt; Approval Settings</strong>. Tabs: <strong>Global, Access Requests, Entitlement Descriptions, Agent Requests</strong>.</p><div class="tablewrap"><table>
 
 <thead>
 <tr class="header">
@@ -781,7 +781,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <li>After timeout, no reminders or escalations happen.</li>
 </ul></div></details>
 <details class="topic" id="module-6-access-requests-and-certifications-6-4-policies-for"><summary><h3>6.4 Policies for approvals (Policy Center)</h3></summary><div class="inner"><ul>
-<li>Access request policies: <strong>Admin &gt;</strong>** Policy Center ****&gt;**** Administration ****&gt;**** Access Request<strong>. Admins and </strong>Access Request Administrators** can create them.</li>
+<li>Access request policies: <strong>Admin &gt; Policy Center &gt; Administration &gt; Access Request</strong>. Admins and <strong>Access Request Administrators</strong> can create them.</li>
 <li>Every submitted request is evaluated. If several policies match, all are evaluated and the <strong>most restrictive</strong> decision is returned.</li>
 <li>Policy decisions generally <strong>override</strong> static configuration, unless a matching policy is set to <strong>honor the existing configuration</strong>.</li>
 <li>Not applied to <strong>bundled provisioning requests, dynamic role requests, tenants with approvals globally disabled, or ServiceNow plugin requests</strong>.</li>
@@ -792,7 +792,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <li>An identity can be in up to <strong>100 segments</strong>. Changes can take about <strong>20 minutes</strong> to apply.</li>
 <li>Segments use identity attributes mapped in identity profiles. For other data, create an attribute mapped to the value you need.</li>
 </ul></div></details>
-<details class="topic" id="module-6-access-requests-and-certifications-6-6-approvals-ad"><summary><h3>6.6 Approvals administration</h3></summary><div class="inner"><p>Path: <strong>Admin &gt;</strong>** Dashboard ****&gt;**** Approval Management<strong>. Manage Access Requests, Entitlement Descriptions, Privilege Classification, Account Requests and Other Approvals. Admin actions: </strong>View Details, Reassign, Remind User, Cancel Request**.</p><ul>
+<details class="topic" id="module-6-access-requests-and-certifications-6-6-approvals-ad"><summary><h3>6.6 Approvals administration</h3></summary><div class="inner"><p>Path: <strong>Admin &gt; Dashboard &gt; Approval Management</strong>. Manage Access Requests, Entitlement Descriptions, Privilege Classification, Account Requests and Other Approvals. Admin actions: <strong>View Details, Reassign, Remind User, Cancel Request</strong>.</p><ul>
 <li>Statuses: Pending, Partial Provisioning, Failed, Error, Canceled, Denied, Completed.</li>
 <li>Search by Access Request IDs (comma-separated allowed, <strong>350 character</strong> limit). This is the <strong>only</strong> search bar that accepts comma-separated values.</li>
 <li>If an approval requires <strong>reauthentication</strong>, you reauthenticate through your SSO provider.</li>
@@ -982,7 +982,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <details class="topic" id="module-8-search-audit-workflows-event-triggers-and-configura-3"><summary><h3>8.2 Audit and monitoring</h3></summary><div class="inner"><ul>
 <li>Nearly all activity is audited. Audit data is kept <strong>1 year plus the current month</strong>. Older data (up to <strong>5 years</strong>) requires the <strong>Audit History Request Form</strong> with a support ticket.</li>
 <li><strong>Default audit reports in Search:</strong> All Events, Access Request Activity, Authentication Activity, Password Changes, Provisioning Activity, All Source Activity (Non-Provisioning).</li>
-<li>Other reports live at <strong>Admin &gt;</strong>** Global ****&gt;**** Reports** (for example Uncorrelated Accounts and Identities Without Managers).</li>
+<li>Other reports live at <strong>Admin &gt; Global &gt; Reports</strong> (for example Uncorrelated Accounts and Identities Without Managers).</li>
 <li>Admin Dashboard: Monitor (active jobs), Tasks, Approval Management, system components (Clusters tile).</li>
 <li><strong>System health notifications</strong> and <strong>source health</strong>, <strong>VA health</strong> emails can be configured.</li>
 </ul></div></details>
@@ -996,7 +996,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 <li><strong>Interactive process:</strong> starts with the Interactive Trigger, uses Interactive Form and Interactive Message actions, and is launched from Launchpad (see Module 5.6).</li>
 <li>Workflows can serve as approval processes for access items and override global approval settings.</li>
 </ul></div></details>
-<details class="topic" id="module-8-search-audit-workflows-event-triggers-and-configura-5"><summary><h3>8.4 Event triggers</h3></summary><div class="inner"><p>Event triggers send event payloads to <strong>webhooks</strong> or custom apps (example: notify a third-party system when an identity is removed). Path: <strong>Admin &gt;</strong>** Event Triggers<strong>. </strong>Early Access** triggers must be requested before they appear.</p><p><strong>Trigger details shown:</strong> Trigger Name, Trigger ID, Description, <strong>Type</strong>, <strong>Input Schema</strong> (what SailPoint sends, with example), <strong>Output Schema</strong> (what SailPoint expects back for Response Required triggers, with example).</p><p><strong>Types:</strong> <strong>Fire and Forget</strong> (no response needed) and <strong>Response Required</strong>.</p><p><strong>Subscription limits:</strong> up to <strong>50 subscriptions</strong> per Fire and Forget trigger and <strong>only 1</strong> per Response Required trigger.</p><p><strong>Creating a subscription:</strong> Admin &gt; Event Triggers &gt; <strong>+ Subscribe</strong>. Enter a unique <strong>Subscription Name</strong> and description, then:</p><div class="tablewrap"><table>
+<details class="topic" id="module-8-search-audit-workflows-event-triggers-and-configura-5"><summary><h3>8.4 Event triggers</h3></summary><div class="inner"><p>Event triggers send event payloads to <strong>webhooks</strong> or custom apps (example: notify a third-party system when an identity is removed). Path: <strong>Admin &gt; Event Triggers</strong>. <strong>Early Access</strong> triggers must be requested before they appear.</p><p><strong>Trigger details shown:</strong> Trigger Name, Trigger ID, Description, <strong>Type</strong>, <strong>Input Schema</strong> (what SailPoint sends, with example), <strong>Output Schema</strong> (what SailPoint expects back for Response Required triggers, with example).</p><p><strong>Types:</strong> <strong>Fire and Forget</strong> (no response needed) and <strong>Response Required</strong>.</p><p><strong>Subscription limits:</strong> up to <strong>50 subscriptions</strong> per Fire and Forget trigger and <strong>only 1</strong> per Response Required trigger.</p><p><strong>Creating a subscription:</strong> Admin &gt; Event Triggers &gt; <strong>+ Subscribe</strong>. Enter a unique <strong>Subscription Name</strong> and description, then:</p><div class="tablewrap"><table>
 
 <thead>
 <tr class="header">
@@ -1184,7 +1184,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </table></div><p>If a VA misses an update you agree to cooperate with SailPoint to bring it current. Falling behind risks <strong>loss of support</strong> (only N-2 major releases are supported).</p></div></details>
 <details class="topic" id="module-9-virtual-appliances-deep-dive-9-5-manual-va-updates-"><summary><h3>9.5 Manual VA updates (Limited Availability)</h3></summary><div class="inner"><ul>
 <li>Opting out of automatic updates requires your organization to <strong>sign an addendum</strong> accepting increased liability. Contact your Customer Success Manager. SailPoint still recommends automatic updates.</li>
-<li>Set it per cluster: cluster card <strong>Menu &gt;</strong>** Update Settings ****&gt;**** Manual<strong>, then use </strong>Apply Updates** on the card.</li>
+<li>Set it per cluster: cluster card <strong>Menu &gt; Update Settings &gt; Manual</strong>, then use <strong>Apply Updates</strong> on the card.</li>
 <li>Status labels: <strong>Critical Update</strong> (apply immediately) and <strong>Out of Support</strong> (fallen behind <strong>more than 2</strong> update versions).</li>
 <li>Support covers <strong>N-2 major releases</strong> using {Major}.{Minor} numbering. Example: if the current release is 4.5, versions 4.0 to 4.5, 3.x and 2.x are supported and anything in version 1 is not.</li>
 <li>Any update labeled a <strong>security fix</strong> must be applied immediately. If not, you lose eligibility for support, warranty and indemnity for a preventable incident.</li>
@@ -1291,7 +1291,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </tr>
 </tbody>
 </table></div><ul>
-<li>Discovered apps show a <strong>risk score out of 100</strong>. You can schedule recurring discovery aggregations under <strong>Additional Settings &gt;</strong>** Discovery Settings**.</li>
+<li>Discovered apps show a <strong>risk score out of 100</strong>. You can schedule recurring discovery aggregations under <strong>Additional Settings &gt; Discovery Settings</strong>.</li>
 <li><strong>Manual discovery limits per day, per source:</strong> Org Admins get <strong>3</strong> (cumulative across all org admins). Regular users get <strong>1</strong>.</li>
 <li><strong>Source recommendations</strong> use AI for <strong>account correlation, account provisioning and app discovery</strong>. You must first connect and aggregate an <strong>authoritative source</strong>. Recommendations depend on data quality.</li>
 <li>New identities take <strong>12 to 24 hours</strong> to be considered for correlation recommendations. New accounts take <strong>12 to 24 hours</strong> for provisioning recommendations. The attribute sync preview data lake can lag the real system by <strong>3 to 6 hours</strong>.</li>
@@ -1574,7 +1574,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </ul></div></details>
 <details class="topic" id="module-13-ai-driven-identity-security-and-privilege-13-3-ide"><summary><h3>13.3 Identity Outliers</h3></summary><div class="inner"><ul>
 <li>Requires <strong>Access Insights</strong>. Launching certifications from outliers also needs <strong>Certifications</strong>. Account data must be onboarded into AI-Driven Identity Security. Available only in AWS regions that support the SageMaker LLM SailPoint uses (me-central-1 is among the unsupported ones).</li>
-<li>Path: <strong>Admin &gt;</strong>** Identity Management ****&gt;**** Outliers<strong>. Each outlier has a </strong>score from 0 to 100** (higher is riskier). The dashboard shows 30-day trends.</li>
+<li>Path: <strong>Admin &gt; Identity Management &gt; Outliers</strong>. Each outlier has a <strong>score from 0 to 100</strong> (higher is riskier). The dashboard shows 30-day trends.</li>
 <li>Score factors: <strong>Standalone Entitlements</strong> (not in an access profile or role), <strong>Rare Access</strong> (share of entitlements held by <strong>under 1%</strong> of identities), and <strong>Roles with a Single Entitlement</strong>. <strong>Extremely Rare</strong> means the <strong>10 rarest</strong> entitlements (ties can push the count above 10).</li>
 <li><strong>Ignore</strong> an outlier and it will not return unless its entitlements change significantly.</li>
 <li>Remediate by starting a certification campaign for outliers. <strong>Limit: 1,000 outliers per campaign.</strong></li>
@@ -1653,7 +1653,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </tr>
 </tbody>
 </table></div><ul>
-<li><strong>Privilege on Demand (JIT access):</strong> access is authorized ahead of time and provisioned only when the user activates it from <strong>Launchpad &gt;</strong>** Just-In-Time Access**. Removal happens on expiry, deactivation or revocation.</li>
+<li><strong>Privilege on Demand (JIT access):</strong> access is authorized ahead of time and provisioned only when the user activates it from <strong>Launchpad &gt; Just-In-Time Access</strong>. Removal happens on expiry, deactivation or revocation.</li>
 <li>Only entitlements on <strong>direct-connect sources</strong> can be configured for JIT.</li>
 <li><strong>Global settings:</strong> Maximum Activation Duration (initial limit, extendable), Default Activation Duration, Maximum Extension Duration, Default Extension Duration. <strong>New limits affect future activations only.</strong></li>
 <li>Policies: <strong>activation policies</strong> and <strong>duration policies</strong> evaluate identity context and entitlement metadata to allow or deny, add friction and set durations. <strong>ServiceNow</strong> integration is available.</li>
@@ -1824,7 +1824,7 @@ details.topic.traps{border-left:4px solid var(--warn-line)}
 </ul></div></details>
 <details class="topic" id="module-16-ciem-shared-signals-and-secops-identity-intelligen-4"><summary><h3>16.3 SecOps Identity Intelligence and Response and Remediation</h3></summary><div class="inner"><ul>
 <li>Gives security analysts <strong>identity context</strong> during triage: the identity behind an alert, its correlated accounts (including <strong>disabled and locked</strong> state) and its access.</li>
-<li><strong>Response actions</strong> (disable an identity or an account) are submitted through the <strong>response actions API</strong> with a <strong>source context</strong> such as CrowdStrike, Microsoft Sentinel, Splunk or a custom integration. Status moves <strong>Submitted &gt;</strong>** In Progress ****&gt;**** Completed or Failed**.</li>
+<li><strong>Response actions</strong> (disable an identity or an account) are submitted through the <strong>response actions API</strong> with a <strong>source context</strong> such as CrowdStrike, Microsoft Sentinel, Splunk or a custom integration. Status moves <strong>Submitted &gt; In Progress &gt; Completed or Failed</strong>.</li>
 <li>The pre-built workflow template uses the <strong>Intel Response Actions trigger</strong>. It disables the selected accounts, or <strong>all accounts</strong> of the selected human identity.</li>
 <li>SIEM and SOAR tools call the <strong>Intelligence API</strong> to enrich alerts. A CrowdStrike Foundry integration is documented.</li>
 </ul></div></details>
